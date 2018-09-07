@@ -22,7 +22,9 @@ type RecaptchaResponse struct {
 	ErrorCodes  []string  `json:"error-codes"`
 }
 
-const recaptchaServerName = "https://www.google.com/recaptcha/api/siteverify"
+// RecaptchaServerName specifies veify server URL
+// You can replace with "https://www.recaptcha.net/recaptcha/api/siteverify" in China
+const RecaptchaServerName = "https://www.google.com/recaptcha/api/siteverify"
 
 var recaptchaPrivateKey string
 
@@ -31,7 +33,7 @@ var recaptchaPrivateKey string
 // the client answered the reCaptcha input question correctly.
 // It returns a boolean value indicating whether or not the client answered correctly.
 func check(remoteip, response string) (r RecaptchaResponse, err error) {
-	resp, err := http.PostForm(recaptchaServerName,
+	resp, err := http.PostForm(RecaptchaServerName,
 		url.Values{"secret": {recaptchaPrivateKey}, "remoteip": {remoteip}, "response": {response}})
 	if err != nil {
 		log.Printf("Post error: %s\n", err)
