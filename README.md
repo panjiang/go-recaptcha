@@ -1,6 +1,13 @@
 go-recaptcha
 ============
 
+Update
+-----
+``` go
+// For China server
+recaptcha.RecaptchaServerName = "https://www.recaptcha.net/recaptcha/api/siteverify"
+```
+
 About
 -----
 
