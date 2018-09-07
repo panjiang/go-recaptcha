@@ -24,7 +24,7 @@ type RecaptchaResponse struct {
 
 // RecaptchaServerName specifies veify server URL
 // You can replace with "https://www.recaptcha.net/recaptcha/api/siteverify" in China
-const RecaptchaServerName = "https://www.google.com/recaptcha/api/siteverify"
+var RecaptchaServerName = "https://www.google.com/recaptcha/api/siteverify"
 
 var recaptchaPrivateKey string
 
